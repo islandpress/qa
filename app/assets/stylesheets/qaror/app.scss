@@ -189,11 +189,15 @@ a.ui_button.small {
     margin-left: auto;
     margin-right: auto;
     width: 970px;
-    padding: 12px 0px;
+    padding: 14px 0px;
   }
   .logo {
     color: #ffffff;
     font-size: 26px;
+  }
+
+  .user_name {
+    color: #fff;;
   }
 }
 
@@ -400,20 +404,30 @@ form {
 }
 
 .simple_captcha_field input, .search_input {
-  font-family: Arial,Helvetica,serif;
-  -webkit-border-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-  width: 100%;
-  padding: 8px 6px;
-  border: 2px solid #AAAAAA;
+  // font-family: Arial,Helvetica,serif;
+  // -webkit-border-radius: 5px;
+  // -webkit-border-top-right-radius: 5px;
+  // -webkit-border-top-left-radius: 5px;
+  // -webkit-border-bottom-left-radius: 5px;
+  // -webkit-border-bottom-right-radius: 5px;
+  // -moz-border-radius: 5px 5px 5px 5px;
+  // border-radius: 5px 5px 5px 5px;
+  // width: 100%;
+  // padding: 8px 6px;
+  // border: 2px solid #AAAAAA;
+  // font-size: 15px;
+  // background-color: #FFFFFF;
+  // margin: 0;
+  background-color: #fff;
   font-size: 15px;
-  background-color: #FFFFFF;
-  margin: 0;
+  color: #333333;
+  border-radius: 6px;
+  border: 1px solid #dfe5e8;
+  outline: none;
+  display: block;
+  width: 100%;
+  height: 41px;
+  padding: 8px 12px;
 }
 
 .field textarea, .new_comment textarea {
@@ -523,7 +537,7 @@ form .actions {
 .tags {
   line-height: 30px;
   a {
-    background-color: #BBBBBB;
+    background-color: $gc-turquoise;
     border-radius: 3px;
     color: #FFFFFF;
     font-size: 13px;
@@ -533,7 +547,7 @@ form .actions {
     vertical-align: baseline;
     white-space: nowrap;
     &:hover {
-      background-color: #DDDDDD;
+      background-color: $gc-dark-blue;
     }
   }
 }
@@ -726,7 +740,7 @@ table .achievement {
 
 .title {
   padding-left: 10px;
-  border-color: #AAAAAA;
+  border-color: $gc-dark-blue;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
   margin: 15px 0px;
@@ -767,7 +781,7 @@ table .achievement {
         }
       }
       &.selected {
-        border-bottom: 3px solid #AAAAAA;
+        border-bottom: 3px solid $gc-dark-blue;
       }
     }
   }
@@ -1097,8 +1111,16 @@ table .achievement {
     float: left;
   }
   .reputation {
-    background-color: #FFFFFF;
-    padding: 0px 5px;
+    background-color: $gc-dark-blue;
+    border-radius: 25px;
+    font-size: 0.8em;
+    padding: 4px 8px;
+    margin-left: 4px;
+    margin-right: 8px;
+
+    a {
+      color: #fff;
+    }
   }
 }
 
