@@ -9,6 +9,7 @@ gem 'pg'
 gem 'squeel'
 gem 'memcachier'
 gem 'dalli'
+gem 'slim'
 
 group :development do
   gem 'execjs'
@@ -24,7 +25,6 @@ end
 # in production environments by default.
 group :assets do
   gem 'bootstrap-sass', '~> 3.1.1.0'
-  gem 'slim'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
