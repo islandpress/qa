@@ -1,8 +1,8 @@
 body {
-  font-family: Helvetica ,serif,sans-serif;
+  font-family: $font-family-sans-serif;
   font-size: 15px;
   color: #161616;
-  background: #eeeeee;
+  background: #fafafa;
 }
 
 .small_font {
@@ -176,8 +176,12 @@ a.ui_button.small {
 }
 
 #header {
-  border-bottom: 2px solid #777777;
-  background-image: linear-gradient(to bottom, #74ace0, #659fd4);
+  background-color: $gc-blue;
+  background-image: image-url('home-background.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+
   .ui_button {
     color: #ffffff;
   }
@@ -201,29 +205,32 @@ a.ui_button.small {
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #bottom {
-  font-size: 14px;
-  margin-top: 20px;
-  margin-bottom: 24px;
-  color: #666666;
+  // font-size: 14px;
+  margin-top: 100px;
+  // margin-bottom: 24px;
+  // color: #666666;
+
   .inner_bottom {
-    background-color: #DDDDDD;
-    border-top: 1px solid #AAAAAA;
-    height: 40px;
-    line-height: 40px;
+    // background-color: #DDDDDD;
+    // border-top: 1px solid #AAAAAA;
+    // height: 40px;
+    // line-height: 40px;
     margin-left: auto;
     margin-right: auto;
     width: 1000px;
-    padding: 0px 15px;
+    // padding: 0px 15px;
   }
-  a {
-    color: #666666;
-    &.selected {
-      color: #111111;
-    }
-  }
+  // a {
+  //   color: #666666;
+  //   &.selected {
+  //     color: #111111;
+  //   }
+  // }
 }
 
 /*#menu {
