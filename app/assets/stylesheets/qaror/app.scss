@@ -1,6 +1,6 @@
 body {
   font-family: $font-family-sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   color: #161616;
   background: #fafafa;
 }
@@ -740,10 +740,9 @@ table .achievement {
 
 .title {
   padding-left: 10px;
-  border-color: $gc-dark-blue;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
   margin: 15px 0px;
+
+
   h1 {
     height: 40px;
   }
@@ -751,6 +750,16 @@ table .achievement {
     height: 34px;
     line-height: 34px;
   }
+}
+
+ul.nav-pills {
+  margin-left: 0;
+}
+
+.underlined {
+  border-bottom: 1px solid $gc-clear-gray;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .answers .title {

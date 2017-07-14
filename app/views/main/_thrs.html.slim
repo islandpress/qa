@@ -1,0 +1,20 @@
+.qa-content
+  ul.nav.nav-tabs.gc-nav-tabs
+    li role="presentation" class=()
+      = link_to 'Active', root_url, class: params[:sort].nil? ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+    li role="presentation"
+      = link_to 'Newest', thrs_sort_url(sort: 'created_at'), class: params[:sort] == 'created_at' ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+    li role="presentation"
+      = link_to 'Hot', thrs_sort_url(sort: 'hot'), class: params[:sort] == 'hot' ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+
+  .panel-box.panel-box--no-top-margin.panel-box--no-bottom-margin
+    .panel-box__body.panel-box__body--main
+      #thrs.lcontent
+        .row
+          .col-xs-12.col-md-9
+            - @thrs.each do |thr|
+              = render :partial=> 'thrs/item',:locals => {:thr=>thr}
+            = will_paginate @thrs, :params => { :format => nil }
+          .col-xs-12.col-md-3
+            = render 'main/rhelper'
+      .clear

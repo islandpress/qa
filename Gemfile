@@ -10,6 +10,8 @@ gem 'squeel'
 gem 'memcachier'
 gem 'dalli'
 gem 'slim'
+gem 'pry-byebug'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'execjs'
@@ -52,7 +54,11 @@ gem "omniauth-facebook"
 #versioning
 gem 'paper_trail', '~> 3.0.1'
 
-gem "rspec-rails", :group => [:test, :development]
+group :test, :development do
+  gem "rspec-rails"
+  gem 'test-unit'
+end
+
 group :test do
   gem "factory_girl_rails"
   gem "capybara"

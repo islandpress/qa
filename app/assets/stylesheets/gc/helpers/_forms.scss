@@ -1,0 +1,92 @@
+.form-control.gc-select,
+.form-control.gc-select:focus {
+  border: 0;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-group .form-control-feedback {
+  pointer-events: initial;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.form-control {
+  @include box-shadow(none);
+}
+
+.input--tag-like {
+  padding: 0px 6px;
+  border-radius: 6px;
+  width: 90px;
+  height: 25px;
+  display: inline-block;
+  margin: 0 8px 8px 0;
+}
+
+textarea,
+textarea.form-control,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+[type=text].form-control,
+[type=password].form-control,
+[type=email].form-control,
+[type=tel].form-control,
+[contenteditable].form-control {
+  background-color: #fff;
+  font-size: 14px;
+  color: $gc-dark-gray;
+  border-radius: 6px;
+}
+
+.control-label {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: $gc-dark-gray;
+}
+
+input[type="checkbox"].checkbox--yellow {
+  position: relative;
+  border: none;
+  margin-bottom: -4px;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:checked:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 6px;
+    display: table;
+    width: 6px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-top-width: 0;
+    border-left-width: 0;
+    @include rotate(45deg);
+  }
+
+  &:checked:after {
+    background-color: #f5c746;
+    border-color: #f5c746;
+  }
+
+  &:disabled:after {
+    border-color: $gray-light;
+  }
+
+  &:disabled:checked:after {
+    background-color: $gray-light;
+    border-color: transparent;
+  }
+}

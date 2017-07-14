@@ -2,7 +2,6 @@
   margin-bottom: 0;
   border-bottom: 1px solid $gc-clear-gray;
   @include box-shadow(none);
-  background-color: $gc-blue;
 
   &--dissolve {
     border-bottom: none;
@@ -34,6 +33,10 @@
   &-nav > li {
     padding-left: 2px;
     padding-right: 2px;
+  }
+
+  &__user-info {
+    margin-top: 5px;
   }
 
   &-profile-image {
@@ -77,6 +80,10 @@
 
   &__inline {
     display: inline-block;
+  }
+
+  &__profile {
+    margin-top: 6px;
   }
 
   &__no-bg:focus, &__no-bg:active, &__no-bg.active, &__no-bg:hover {

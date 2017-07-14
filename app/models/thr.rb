@@ -6,7 +6,7 @@ class Thr < ActiveRecord::Base
     :user_id  => Proc.new { |m| m.updated_by.id },
     :summary  => Proc.new { |m| m.vsummary if m.changed? && !m.vsummary.blank? }
   }
-  
+
   include Extender::Voteable
   include Extender::Impressionable
   include Extender::Taggable
