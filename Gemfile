@@ -12,6 +12,7 @@ gem 'dalli'
 gem 'slim'
 gem 'pry-byebug'
 gem 'font-awesome-rails'
+gem 'bootstrap-will_paginate'
 
 group :development do
   gem 'execjs'

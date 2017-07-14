@@ -1,0 +1,41 @@
+.thr-item {
+  border-bottom: 1px solid $gray-lighter;
+  margin-top: 10px;
+  padding-bottom: 10px;
+
+  &__title {
+    color: $gc-blue;
+    font-size: 1.3em;
+  }
+
+  &__author {
+    font-size: 0.8em;
+  }
+
+  &__last-action {
+    font-size: 1em;
+    color: $gray-light;
+    display: inline;
+  }
+}
+
+.thr-counter {
+  text-align: center;
+
+  &__count {
+    font-size: 1.4em;
+  }
+
+  &__label {
+    margin-top: -8px;
+  }
+
+  &__count--accepted {
+    color: $gc-dark-green;
+  }
+
+  &__label--accepted {
+    color: $gc-dark-green;
+    text-decoration: underline;
+  }
+}

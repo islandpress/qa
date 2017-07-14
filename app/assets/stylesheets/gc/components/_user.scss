@@ -1,0 +1,15 @@
+.user {
+  display: inline;
+
+  &__name {
+    margin-right: 4px;
+    color: $gc-dark-blue;
+    font-weight: bold;
+  }
+
+  &__reputation {
+    background: $gc-blue-gray;
+    margin-right: 8px;
+    padding: 2px 4px;
+  }
+}
