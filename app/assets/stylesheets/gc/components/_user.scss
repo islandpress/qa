@@ -1,5 +1,11 @@
 .user {
   display: inline;
+  line-height: 30px;
+  float: left;
+
+  &--reset {
+    float: none;
+  }
 
   &__name {
     margin-right: 4px;
@@ -11,5 +17,11 @@
     background: $gc-blue-gray;
     margin-right: 8px;
     padding: 2px 4px;
+  }
+
+  &__image {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $gc-clear-gray;
   }
 }
