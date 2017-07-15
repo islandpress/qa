@@ -1,0 +1,28 @@
+.qa-content
+  ul.nav.nav-tabs.gc-nav-tabs
+    li role="presentation"
+      = link_to 'Activity', tag_url(params[:id]), class: params[:sort].nil? ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+    li role="presentation"
+      = link_to 'Newest', tag_sort_url(sort: 'newest'), class: params[:sort] == 'newest' ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+    li role="presentation"
+      = link_to 'Hot', tag_sort_url(sort: 'hot'), class: params[:sort] == 'hot' ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+
+  .panel-box.panel-box--no-top-margin
+    .panel-box__body.panel-box__body--main.panel-box__body--bottom
+      .row
+        .col-xs-12.col-md-9
+          #thrs.lcontent
+            .title
+              h2.left= "All posts with tag \"#{sanitize(params[:id])}\""
+              .clear
+            = render 'thrs/list'
+            = will_paginate @thrs,:params => { :format => nil }
+        .col-xs-12.col-md-3
+          .rhelper
+            .block
+              .results_count= @thrs.total_entries
+              div= t :found
+            .block
+              .tags-list
+                = link_to "##{@tag.name} (#{@tag.quantity})", tag_path(id: @tag.name), class: 'tags-list__tag'
+          .clear
