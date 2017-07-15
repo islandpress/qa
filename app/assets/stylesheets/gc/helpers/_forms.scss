@@ -43,7 +43,10 @@ input[type=number],
   color: $gc-dark-gray;
   border-radius: 6px;
   border-color: $gc-clear-blue;
+  border-style: solid;
+  border-width: 1px;
   width: 100%;
+  padding: 4px 8px;
 }
 
 .control-label {
