@@ -11,6 +11,7 @@
       - @tag_thr.each do |name, count|
         = link_to tag_path(id: name), class: 'tags-list__tag' do
           = "##{name} (#{count})"
+      .clearfix
   - if !@achievements.blank?
     .block
       .title
