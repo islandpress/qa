@@ -1,0 +1,17 @@
+<ul class='nav nav-tabs gc-nav-tabs'>
+  <li role='presentation'>
+    <%= link_to 'Info', user_url(@user), class: current_page?(user_url(@user)) ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab' %>
+  </li>
+  <li role='presentation'>
+    <%= link_to 'Favorites', favorites_user_url(@user), class: current_page?(favorites_user_url(@user)) ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab' %>
+  </li>
+  <li role='presentation'>
+    <%= link_to 'Reputation', reputation_user_url(@user), class: current_page?(reputation_user_url(@user)) ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab' %>
+  </li>
+  <li role='presentation'>
+    <%= link_to 'Activity', activity_user_url(@user), class: current_page?(activity_user_url(@user)) ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab' %>
+  </li>
+  <li role='presentation'>
+    <%= link_to 'Votes', votes_user_url(@user), class: current_page?(votes_user_url(@user)) ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab' %>
+  </li>
+</ul>

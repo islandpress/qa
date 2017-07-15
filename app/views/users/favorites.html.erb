@@ -1,18 +1,26 @@
-<div id="thrs">
-  <div class="title">
-    <h2 class="left"><%=raw @user.sname %></h2>
-    <div class="right">
-      <%= render_navigation(:context=>:user_tabs) %>
+<div class='qa-content'>
+  <%= render 'users/tabs' %>
+  <div class='panel-box panel-box--no-top-margin'>
+    <div class='panel-box__body panel-box__body--main panel-box__body--bottom'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <div id="thrs">
+            <div class="title">
+              <h2 class="left"><%=raw @user.sname %></h2>
+              <div class="clear"></div>
+            </div>
+            <div class="summary">
+              <em><%= @user.favs.count %></em>
+              <%=t 'sort.user_tabs.favorites' %>
+            </div>
+            <div id="content">
+              <% @user.favs.each do |fav| %>
+                <%= render :partial=> 'thrs/item',:locals => {:thr=>fav.activityable,:show_fav=>true} %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="clear"></div>
-  </div>
-  <div class="summary">
-    <em><%= @user.favs.count %></em>
-    <%=t 'sort.user_tabs.favorites' %>
-  </div>
-  <div id="content">
-    <% @user.favs.each do |fav| %>
-      <%= render :partial=> 'thrs/item',:locals => {:thr=>fav.activityable,:show_fav=>true} %>
-    <% end %>
   </div>
 </div>
