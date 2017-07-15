@@ -1,0 +1,13 @@
+.gc-nav-tabs {
+  &__tab {
+    border-radius: 6px;
+    background: $gc-clear-gray;
+    line-height: 0.8 !important;
+  }
+
+  &__tab--active {
+    background: #fff;
+    border-bottom: 2px solid #fff !important;
+    margin-bottom: -1px;
+  }
+}

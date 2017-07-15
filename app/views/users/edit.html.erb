@@ -1,4 +1,14 @@
-<div class="title">
-  <h2><%= t 'users.edit.title' %> <%=raw @user.sname %></h2>
+<div class='qa-content'>
+  <div class='panel-box panel-box--no-top-margin'>
+    <div class='panel-box__body panel-box__body--main panel-box__body--bottom'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <div class="title">
+            <h2><%= t 'users.edit.title' %> <%=raw @user.sname %></h2>
+          </div>
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<%= render 'form' %>

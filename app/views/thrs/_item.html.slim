@@ -1,0 +1,35 @@
+.thr-item
+  .row
+    .col-xs-12.col-md-3
+      .row
+        .col-xs-4
+          .thr-counter
+            .thr-counter__count= thr.vote_count
+            .thr-counter__label
+              | Votes
+        .col-xs-4
+          .thr-counter
+            div class=(thr.resolved? ?  'thr-counter__count thr-counter__count--accepted' : 'thr-counter__count')
+              = thr.ans.active.count(:id)
+            div class=(thr.resolved? ?  'thr-counter__label thr-counter__label--accepted' : 'thr-counter__label')
+              | Answers
+        .col-xs-4
+          .thr-counter
+            .thr-counter__count= thr.hits
+            .thr-counter__label
+              | Views
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12
+          = link_to thr.stitle, thr, class: 'thr-item__title'
+      .row
+        .col-xs-12
+          .pull-left
+            .tags-list
+              - thr.tagnames.split(' ').each do |name|
+                = link_to "##{name}", tag_path(id: name), class: 'tags-list__tag'
+          .pull-right
+            .user
+              = link_to raw(thr.last_activity_user.sname), thr.last_activity_user, class: 'user__name'
+              = link_to thr.last_activity_user.reputation, votes_user_path(thr.last_activity_user), class: 'user__reputation'
+            .thr-item__last-action= distance_of_time_in_words_to_now(thr.activity_at)

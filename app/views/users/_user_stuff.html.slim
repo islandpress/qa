@@ -1,0 +1,8 @@
+.user_stuff
+  - unless current_user
+    = link_to 'Register', register_url,class: 'btn btn-white-blue'
+    = link_to 'Log In', login_url, class: 'btn btn-gc-transparent'
+  - else
+    = user_label_small(current_user)
+    = link_to t(:profile), profile_url, class: 'btn btn-gc-transparent'
+    = link_to t(:logout), logout_url, class: 'btn btn-gc-transparent notsoimportant'

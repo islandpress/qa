@@ -1,0 +1,11 @@
+.question {
+  &__title {
+    padding: 10px 0 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gc-clear-gray;
+  }
+
+  &__content {
+    font-size: 14px;
+  }
+}

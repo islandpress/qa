@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= h (!yield(:title).blank? && yield(:title)) || "Questions & Answers platform on Rails"
+    - if controller_name == 'main'
+      meta content=("Questions & Answers platform on Rails") name="keywords" /
+      meta content=("Questions & Answers platform on Rails") name="description" /
+    meta content="text/html;charset=UTF-8" http-equiv="content-type" /
+    meta content="all" name="robots" /
+    meta content="mattdw" name="author" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = render 'layouts/tagit'  if (['thrs'].include? controller_name) && (["new","create","edit","update"].include? action_name)
+    /![if gte IE 5.5000]
+      haml_silent
+    = csrf_meta_tag
+  body
+    /! flash windows
+    = render :partial => 'shared/flash_window'
+    .home-header
+      = render 'shared/gc/home_nav'
+    .container
+      .row
+        .col-xs-12
+          = yield
+
+    = render 'shared/gc/footer'

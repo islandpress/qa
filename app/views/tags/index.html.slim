@@ -1,0 +1,20 @@
+.qa-content
+  ul.nav.nav-tabs.gc-nav-tabs
+    li role="presentation"
+      = link_to 'Popular', tags_url, class: params[:sort].nil? ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+    li role="presentation"
+      = link_to 'By name', tags_sort_url(sort: 'name'), class: params[:sort] == 'name' ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+    li role="presentation"
+      = link_to 'Newest', tags_sort_url(sort: 'newest'), class: params[:sort] == 'newest' ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+
+  .panel-box.panel-box--no-top-margin
+    .panel-box__body.panel-box__body--main.panel-box__body--bottom
+      .row
+        .col-xs-12
+          .title
+            h1.left= title t("activerecord.models.tags")
+            .clear
+          .tags-list
+            - @tags.each do |tag|
+              = link_to "##{tag.name} (#{tag.quantity})", tag_path(id: tag.name), class: 'tags-list__tag'
+          = will_paginate(@tags,:params => { :format => nil })

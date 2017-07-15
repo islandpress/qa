@@ -1,0 +1,41 @@
+.qa-content
+  .panel-box.panel-box--no-top-margin
+    .panel-box__body.panel-box__body--main.panel-box__body--bottom
+      .row
+        .col-xs-12.col-md-9
+          = render 'thrs/schema'
+        .col-xs-12.col-md-3
+          .rhelper
+            .block
+              .title
+                h3= t("thrs.show.details")
+              .tags-list
+                - @tag_thr.each do |name, count|
+                  = link_to tag_path(id: name), class: 'tags-list__tag' do
+                    = "##{name} (#{count})"
+              .bdesc
+                div
+                  = t(:created)
+                  | : #{l @thr.created_at,:format=>:short}
+                div
+                  = t(:views)
+                  | : #{@thr.hits}
+                - if @thr.versions.count > 0
+                  div
+                    = t(:edit)
+                    | : #{l @thr.versions.last.created_at,:format=>:short}
+            - if current_user
+              .block
+                .title
+                  h3= t("thrs.show.interesting")
+                .bdesc
+                  .thr_sub
+                    = render :partial=> 'thrs/subscription'
+            - cache("thrs/#{@thr.id}/related_thrs") do
+              - if !@related_thrs.blank?
+                .block
+                  .title
+                    h3= t("thrs.show.related")
+                  - @related_thrs.each do |thr|
+                    .related= link_to thr.stitle,thr
+          .clear

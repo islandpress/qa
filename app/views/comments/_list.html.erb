@@ -11,7 +11,13 @@
       <%# if can? :vote, comment %>
         <%#= render :partial=> 'shared/vote', :locals => { :object => comment }  %>
       <%# end %>
-      <span class="content"><%= comment.content %></span>&nbsp; &mdash; &nbsp;<%= user_label_small(comment.user) %>
+      <span class="content">
+        <%= comment.content %></span>&nbsp; &mdash; &nbsp;
+        <div class='user user--reset'>
+          <%= link_to raw(comment.user.sname), comment.user, class: 'user__name' %>
+          <%= link_to comment.user.reputation, votes_user_path(comment.user), class: 'user__reputation' %>
+        </div>
+
       <span class="created_at small_font"><%= distance_of_time_in_words_to_now(comment.created_at) %></span>
     </div>
   <% end %>

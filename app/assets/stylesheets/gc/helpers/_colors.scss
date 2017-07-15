@@ -1,0 +1,15 @@
+.gray-lighter {
+  color: $gray-lighter;
+}
+
+.gray-light {
+  color: $gray-light;
+}
+
+.gray {
+  color: $gray;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: $gc-blue;
+}

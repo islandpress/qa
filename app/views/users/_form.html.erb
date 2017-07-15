@@ -37,7 +37,7 @@
     <%= field_messages_for @user %>
   </div>
   <div class="clear"></div>
-  <div>
+  <div class='col-xs-12'>
     <div class="title">
       <h2><%=t 'users.subscription.title' %></h2>
     </div>
@@ -57,9 +57,9 @@
       <%= check_box_tag 'user_setting[notify_answer_resolved]',1, @user.user_setting.notify_answer_resolved==1 %>
       <%= f.label t('users.subscription.notify_answer_resolved') %>
     </div>
-  </div>
-  <div class="actions">
-    <%= f.submit t(:save), :class=> 'ui_button' %>
+    <div class="actions">
+      <%= f.submit t(:save), :class=> 'btn btn-clear-blue' %>
+    </div>
   </div>
 </div>
 <% end %>

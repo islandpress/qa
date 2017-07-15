@@ -2,9 +2,9 @@ class ThrsController < ApplicationController
 
   authorize_resource :except => :index
 
-  
+
   def index
-    
+
     respond_to do |format|
       format.html {
         @tag_thr = Thr.joins(:tags).group("tags.name").limit(10).count(:id)
@@ -30,7 +30,7 @@ class ThrsController < ApplicationController
   end
 
   def new
-    
+
     @thr = Thr.new
     if session[:thr]
       @thr.title = session[:thr][:title]
@@ -44,7 +44,7 @@ class ThrsController < ApplicationController
 
   def edit
     @thr = Thr.find(params[:id])
-    
+
 #    p @thr
     if !params[:version].blank?
       restore_version = @thr.versions[params[:version].to_i]
@@ -99,12 +99,12 @@ class ThrsController < ApplicationController
     @thr.add_attaches = params[:attaches] if can?(:edit, @thr)
     @thr.updated_by = current_user
     Extender::Activities.revise(@thr,current_user) if @thr.changed?
-    respond_to do |format|
-      if @thr.save
-        format.html { redirect_to(@thr, :notice => t('thrs.update.saved')) }
-      else
-        format.html { render :action => "edit" }
-      end
+    binding.pry
+
+    if @thr.save
+      redirect_to(@thr, :notice => t('thrs.update.saved'))
+    else
+      render 'edit'
     end
   end
 
@@ -123,7 +123,7 @@ class ThrsController < ApplicationController
   end
 
   def answer
-    
+
     show_action
 
     if request.post?
@@ -139,7 +139,7 @@ class ThrsController < ApplicationController
       @an.captcha_key = params[:an][:captcha_key]
 
     end
-    
+
 #    respond_to do |format|
       if request.post? && @an.valid_with_captcha? && cannot?(:skip_captcha,An)
         render 'show'
@@ -159,7 +159,7 @@ class ThrsController < ApplicationController
   end
 
   def tagged
-    
+
   end
 
   def vote
@@ -182,7 +182,7 @@ class ThrsController < ApplicationController
     @thr = Thr.find(params[:id])
     Extender::Activities.fav(@thr, current_user)
 
-    respond_to do |format| 
+    respond_to do |format|
       format.html { redirect_to(request.referer) }
       format.js
     end
@@ -274,13 +274,13 @@ private
     @comment = Comment.new
 
     @an = An.new
-    if session[:an]  
+    if session[:an]
       @an.thr_id = session[:an][:thr_id]
       @an.content = session[:an][:content]
     end
-    
+
     @ans = @thr.ans.active.sortable(params[:sort])
-    
+
   end
 
 

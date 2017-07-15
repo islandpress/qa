@@ -1,0 +1,52 @@
+nav.navbar.navbar--dissolve
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed data-target='#navbar-collapse' data-toggle='collapse' type='button'
+        span.sr-only Toggle navigation
+        span.icon-bar.navbar__icon-bar
+        span.icon-bar.navbar__icon-bar
+        span.icon-bar.navbar__icon-bar
+      a.navbar-brand.navbar-brand--dissolve href='/'
+        svg.navbar-brand-logo height="37px" version="1.1" viewbox=("0 0 37 37") width="37px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          g#Page-1 fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"
+            g fill="#FFFFFF" id="Shared-Eco-Home-Page-2-(v2)" transform="translate(-141.000000, -25.000000)"
+              g#Header transform="translate(141.000000, 25.000000)"
+                g#Logo
+                  path#Combined-Shape d="M7,0 L30,0 C33.8659932,-7.10171439e-16 37,3.13400675 37,7 L37,30 C37,33.8659932 33.8659932,37 30,37 L7,37 C3.13400675,37 4.73447626e-16,33.8659932 0,30 L0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 L7,0 Z M26.7853231,9 L10.976147,9 C9.88926616,9 9,9.88926616 9,10.976147 L9,28.7614702 L12.952294,24.8091761 L26.7853231,24.8091761 C27.872204,24.8091761 28.7614702,23.91991 28.7614702,22.8330291 L28.7614702,10.976147 C28.7614702,9.88926616 27.872204,9 26.7853231,9 Z"
+        .navbar-brand-name Green Commons
+        .clearfix
+    #navbar-collapse.collapse.navbar-collapse.navbar__collapse
+      ul.nav.navbar-nav.navbar__navbar-nav.navbar-right
+        li
+          = form_tag search_index_url, method: :get, autocomplete: :off, class: 'navbar-form customer-search-form' do |form|
+            .form-group.has-feedback
+              = text_field_tag :term, params[:term], placeholder: 'Search...', class: 'form-control navbar__search-input'
+              = button_tag type: 'submit', name: nil, class: 'form-control-feedback navbar__search-button' do
+                i.fa.fa-search
+
+        - if current_user
+          li.mr-10
+            .btn-network.navbar-btn
+              = link_to new_thr_url, class: 'btn btn-gc-transparent'
+                span.glyphicon.glyphicon-plus.glyphicon--right aria-hidden='true'
+                | New question
+
+          li.dropdown
+            .navbar-btn
+              a.navbar__no-bg.navbar__inline.dropdown-toggle aria-expanded='false' data-toggle='dropdown' href='#' role='button'
+                .navbar__profile.navbar__inline.navbar__profile
+                  = "Hello, #{current_user.name} "
+                  span.caret
+
+              ul.dropdown-menu role='menu'
+                li.navbar__dropdown-item= link_to('My Profile', profile_url)
+                li.navbar__dropdown-item= link_to('Logout', logout_url)
+
+          .navbar-profile-image.navbar__inline
+            .navbar-btn
+              = image_tag(APP_CONFIG['gravatar_url'] + Digest::MD5.hexdigest(current_user.email) + "?d=identicon&s=40", class: 'img-circle')
+
+        - else
+          ul.nav.navbar-nav.navbar-right
+            li.navbar-btn= link_to 'Register', register_url, class: 'btn btn-white-blue'
+            li.navbar-btn= link_to 'Log In', login_url, class: 'navbar__no-bg'

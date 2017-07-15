@@ -1,0 +1,23 @@
+.rhelper
+  .block
+    .title
+      h3 Green Commons Q&A
+    p
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  .block
+    .title
+      h3 Latest tags
+    .tags-list
+      - @tag_thr.each do |name, count|
+        = link_to tag_path(id: name), class: 'tags-list__tag' do
+          = "##{name} (#{count})"
+      .clearfix
+  - if !@achievements.blank?
+    .block
+      .title
+        h3 Latest achievements
+      .achievements
+        - @achievements.each do |achievement|
+          div
+            = achievement_schema(achievement.badge,:count=>false)
+            = raw achievement.user.sname

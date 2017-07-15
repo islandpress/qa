@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.2.2'
 
 gem 'rails', '3.2.22'
 
@@ -9,6 +9,10 @@ gem 'pg'
 gem 'squeel'
 gem 'memcachier'
 gem 'dalli'
+gem 'slim'
+gem 'pry-byebug'
+gem 'font-awesome-rails'
+gem 'bootstrap-will_paginate'
 
 group :development do
   gem 'execjs'
@@ -23,6 +27,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'bootstrap-sass', '~> 3.1.1.0'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
@@ -50,7 +55,11 @@ gem "omniauth-facebook"
 #versioning
 gem 'paper_trail', '~> 3.0.1'
 
-gem "rspec-rails", :group => [:test, :development]
+group :test, :development do
+  gem "rspec-rails"
+  gem 'test-unit'
+end
+
 group :test do
   gem "factory_girl_rails"
   gem "capybara"

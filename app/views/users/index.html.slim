@@ -1,0 +1,17 @@
+.qa-content
+  ul.nav.nav-tabs.gc-nav-tabs
+    li role="presentation"
+      = link_to 'Reputation', users_url, class: params[:sort].nil? ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+    li role="presentation"
+      = link_to 'Recently joined', users_url(sort: 'newest'), class: params[:sort] == 'newest' ? 'gc-nav-tabs__tab gc-nav-tabs__tab--active' : 'gc-nav-tabs__tab'
+
+  .panel-box.panel-box--no-top-margin
+    .panel-box__body.panel-box__body--main.panel-box__body--bottom
+      .row
+        .col-xs-12.col-md-9
+          .title
+            h1.left= title t('activerecord.models.users')
+            .clear
+          #users.icontent
+            = render 'list'
+          = will_paginate(@users,:params => { :format => nil })
