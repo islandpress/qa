@@ -1,0 +1,20 @@
+machine:
+  timezone:
+    America/Los_Angeles # Set the timezone
+  ruby:
+    version:
+      2.2.7
+
+  environment:
+    CIRCLE_ENV: test
+
+test:
+  override:
+    - bundle exec rspec
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - git push git@heroku.com:greencommons-qa.git $CIRCLE_SHA1:master
+      - heroku run 'rake db:migrate' --app greencommons-qa
