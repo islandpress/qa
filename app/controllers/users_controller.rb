@@ -112,7 +112,7 @@ class UsersController < ApplicationController
 # POST /users/remind_password
   def remind_password
     @user = User.active.where(:email=>params[:user][:email]).first
-    
+
     if @user.nil?
       flash[:user_error] = t 'users.email_not_exists_or_blocked'
       render :action => "remind_password_edit"
@@ -122,7 +122,7 @@ class UsersController < ApplicationController
       @user.captcha = params[:user][:captcha]
       @user.captcha_key = params[:user][:captcha_key]
     end
-    
+
     respond_to do |format|
       if @user.save_with_captcha
         Mailer.remind_password(@user).deliver
@@ -175,7 +175,7 @@ class UsersController < ApplicationController
         @user.status = User::STATUS_ACTIVE
         @user.save
         Extender::Activities.confirm_email(@user)
-        flash[:notice] = t :user_successfully_activated
+        flash[:notice] = 'Account Activated.'
         format.html { redirect_to root_url}
       else
         format.html { redirect_to root_url}
