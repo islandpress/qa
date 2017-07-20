@@ -1,20 +1,20 @@
 {
   "name": "QARoR",
   "description": "The Open-Source Questions & Answers platform for Ruby on Rails",
-  "repository": "https://github.com/mateuszdw/qaror",
+  "repository": "https://github.com/greencommons/qaror",
   "keywords": ["discussions", "forums", "questions", "answers"],
   "logo": "https://raw.githubusercontent.com/mateuszdw/qaror/master/app/assets/images/logo.png",
-  "website": "http://qaror.herokuapp.com",
+  "website": "https://greencommons-qa.herokuapp.com",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
   },
   "env": {
     "APP_DOMAIN": {
       "description": "WARNING! Please replace <APP NAME> with your heroku app name. Replace full URL if you have custom domain for your QARoR app.",
-      "value": "http://<APP NAME>.herokuapp.com"
+      "value": "https://greencommons-qa.herokuapp.com"
     },
     "DISPLAY_APP_NAME": {
-      "value": "Your QARoR app name"
+      "value": "Green Commons Q&A"
     },
     "SECRET_KEY_BASE": {
       "description": "This gets generated",
