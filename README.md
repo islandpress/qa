@@ -16,7 +16,7 @@ Because it`s:
 
 # Install on Heroku (heroku.com)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mateuszdw/qaror)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/islandpress/qa)
 
 ### Install manually on Heroku
 
@@ -28,7 +28,7 @@ Before installation:
 
 Type in console:
 
-        $ git clone https://github.com/mateuszdw/qaror.git
+        $ git clone https://github.com/islandpress/qa.git
         $ cd ./qaror
         $ bundle install
         $ git init
@@ -48,7 +48,7 @@ If something goes wrong with addons read more on https://devcenter.heroku.com/
 
 # Contribution
 
-[![Code Climate](https://codeclimate.com/github/mateuszdw/qaror/badges/gpa.svg)](https://codeclimate.com/github/mateuszdw/qaror)
+[![Code Climate](https://codeclimate.com/github/islandpress/qa/badges/gpa.svg)](https://codeclimate.com/github/islandpress/qa)
 
 This project was implemented at StartX Stanford Accelerator
 
