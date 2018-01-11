@@ -13,38 +13,29 @@
                   | &copy; 2018 Green Commons
 
             .col-xs-12.col-sm-3
-              h5.home-footer__title Main menu
+              h5.home-footer__title Info
               ul.home-footer__sections.home-footer__sections--list
-                li= link_to 'Home', root_path, class: 'home-footer__section'
-                li= link_to 'About us', root_path, class: 'home-footer__section'
-                li= link_to 'Services & Ipsum', root_path, class: 'home-footer__section'
-                li= link_to 'Contact', root_path, class: 'home-footer__section'
+                li= link_to 'Home', 'https://gcommons.herokuapp.com/', class: 'home-footer__section'
+                li= link_to 'About us', 'https://gcommons.herokuapp.com/about', class: 'home-footer__section'
+                li= link_to 'Privacy Policy', 'https://gcommons.herokuapp.com/privacypolicy', class: 'home-footer__section'
+                li= link_to 'Contact', "mailto:info@greencommons.net", class: 'home-footer__section'
 
             .col-xs-12.col-sm-3
-              h5.home-footer__title Navigation
+              h5.home-footer__title Site Map
               ul.home-footer__sections.home-footer__sections--list
+                li= link_to 'Home', 'https://gcommons.herokuapp.com/', class: 'home-footer__section'
+                li= link_to 'Search', 'https://gcommons.herokuapp.com/search', class: 'home-footer__section'
                 li= link_to 'Q&A', root_path, class: 'home-footer__section'
-                li= link_to 'Tags', tags_path, class: 'home-footer__section'
-                li= link_to 'Users', users_path, class: 'home-footer__section'
-                li= link_to 'Privileges', privileges_path, class: 'home-footer__section'
 
             .col-xs-12.col-sm-3
-              h5.home-footer__title Social media
+              h5.home-footer__title Social Media
               ul.home-footer__sections.home-footer__sections--list
                 li
-                  = link_to root_path, class: 'home-footer__section' do
+                  = link_to 'https://www.facebook.com/Green-Commons-329102740902514/', class: 'home-footer__section' do
                     .fa.fa-facebook.glyphicon--right
                     | Facebook
                 li
-                  = link_to root_path, class: 'home-footer__section' do
-                    .fa.fa-youtube.glyphicon--right
-                    | Youtube
-                li
-                  = link_to root_path, class: 'home-footer__section' do
-                    .fa.fa-instagram.glyphicon--right
-                    | Instagram
-                li
-                  = link_to root_path, class: 'home-footer__section' do
+                  = link_to 'https://twitter.com/green_commons', class: 'home-footer__section' do
                     .fa.fa-twitter.glyphicon--right
                       | Twitter
 
