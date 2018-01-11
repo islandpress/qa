@@ -16,5 +16,5 @@ deployment:
   production:
     branch: master
     commands:
-      - git push git@heroku.com:greencommons-qa.git $CIRCLE_SHA1:master
-      - heroku run 'rake db:migrate' --app greencommons-qa
+      - git push git@heroku.com:gcommons-qa.git $CIRCLE_SHA1:master
+      - heroku run 'rake db:migrate' --app gcommons-qa
