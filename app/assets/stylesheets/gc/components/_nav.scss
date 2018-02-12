@@ -21,6 +21,10 @@
 
   &-brand-logo {
     float: left;
+    margin-right: 10px;
+  }
+
+  &-brand-logo--home {
     margin-right: 20px;
   }
 
@@ -61,7 +65,7 @@
   }
 
   .navbar-form &__search-input {
-    width: 100%;
+    width: 400px;
   }
 
   &__search-button {
@@ -73,6 +77,11 @@
     }
   }
 
+  &__brand-exper {
+  	height: 37px;
+  	fill: none;
+  }
+
   &__no-bg {
     color: #fff;
     background: none !important;
@@ -80,10 +89,6 @@
 
   &__inline {
     display: inline-block;
-  }
-
-  &__profile {
-    margin-top: 6px;
   }
 
   &__no-bg:focus, &__no-bg:active, &__no-bg.active, &__no-bg:hover {
@@ -153,17 +158,3 @@
     padding-bottom: 10px;
   }
 }
-
-@media only screen and (min-width : 1200px) {
-  .navbar {
-    .navbar-form &__search-input {
-      width: 400px;
-    }
-  }
-}
-
-
-.navbar-nav > li > a {
-  line-height: 14px;
-}
-
