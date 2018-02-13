@@ -46,13 +46,12 @@ Default QARoR installation is adapted to this Heroku Addons:
 
 If something goes wrong with addons read more on https://devcenter.heroku.com/
 
-# Contribution
+### Install locally
 
-[![Code Climate](https://codeclimate.com/github/islandpress/qa/badges/gpa.svg)](https://codeclimate.com/github/islandpress/qa)
-
-This project was implemented at StartX Stanford Accelerator
-
-Feel free to contribute the project
+        $ bundle install
+        $ rake db:create
+        $ bundle exec rake db:migrate && bundle exec rake db:seed
+        $ bundle exec rackup -p 3000
 
 # TODO
 
